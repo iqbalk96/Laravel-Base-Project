@@ -5,6 +5,7 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\PortfolioResource\Pages;
 use App\Models\Portfolio;
 use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
@@ -38,6 +39,10 @@ class PortfolioResource extends Resource
                 TextInput::make('slug')
                     ->required(),
 
+                Select::make('category_id')
+                    ->relationship('category', 'name')
+                    ->required(),
+
                 FileUpload::make('thumbnail')
                     ->directory('portfolios')
                     ->image()
@@ -65,6 +70,10 @@ class PortfolioResource extends Resource
                 ImageColumn::make('thumbnail')->size(40),
                 TextColumn::make('client'),
                 TextColumn::make('year'),
+                TextColumn::make('category.name')
+                    ->label('Category')
+                    ->sortable()
+                    ->searchable(),
                 IconColumn::make('is_featured')->boolean(),
                 IconColumn::make('is_active')->boolean(),
                 TextColumn::make('created_at')->dateTime(),

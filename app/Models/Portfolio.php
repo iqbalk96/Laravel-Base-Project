@@ -11,9 +11,15 @@ class Portfolio extends Model
         'slug',
         'thumbnail',
         'description',
+        'category_id',
         'client',
         'year',
         'is_featured',
         'is_active',
     ];
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
 }
