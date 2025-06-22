@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\About;
+use App\Models\History;
 use App\Models\Setting;
 use App\Models\User;
 use Illuminate\Database\Seeder;
@@ -36,6 +37,12 @@ class DatabaseSeeder extends Seeder
             'title' => 'Tentang Kami',
         ], [
             'content' => '<p>Konten awal tentang kami</p>',
+        ]);
+
+        History::firstOrCreate([
+            'title' => 'Sejarah',
+        ], [
+            'content' => '<p>Konten awal history</p>',
         ]);
     }
 }
