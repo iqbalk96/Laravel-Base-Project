@@ -6,6 +6,7 @@ use App\Models\About;
 use App\Models\History;
 use App\Models\Setting;
 use App\Models\User;
+use App\Models\VisionMission;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -43,6 +44,12 @@ class DatabaseSeeder extends Seeder
             'title' => 'Sejarah',
         ], [
             'content' => '<p>Konten awal history</p>',
+        ]);
+
+        VisionMission::firstOrCreate([
+            'vision' => 'Visi',
+        ], [
+            'mission' => '<p>Mission 1</p>',
         ]);
     }
 }
