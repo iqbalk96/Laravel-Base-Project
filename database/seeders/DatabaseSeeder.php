@@ -27,8 +27,8 @@ class DatabaseSeeder extends Seeder
         Setting::updateOrCreate(
             ['id' => 1],
             [
-                'company_name' => 'Roketin',
-                'email' => 'info@roketin.com',
+                'company_name' => 'Sukangopi',
+                'email' => 'info@sukangopi.com',
                 'phone' => '08123456789',
                 'address' => 'Jl. Contoh Alamat No.1, Jakarta',
             ]
@@ -37,19 +37,19 @@ class DatabaseSeeder extends Seeder
         About::firstOrCreate([
             'title' => 'Tentang Kami',
         ], [
-            'content' => '<p>Konten awal tentang kami</p>',
+            'content' => 'Konten awal tentang kami',
         ]);
 
         History::firstOrCreate([
             'title' => 'Sejarah',
         ], [
-            'content' => '<p>Konten awal history</p>',
+            'content' => 'Konten awal history',
         ]);
 
         VisionMission::firstOrCreate([
             'vision' => 'Visi',
         ], [
-            'mission' => '<p>Mission 1</p>',
+            'mission' => 'Mission 1',
         ]);
     }
 }
