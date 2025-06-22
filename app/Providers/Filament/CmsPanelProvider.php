@@ -2,6 +2,7 @@
 
 namespace App\Providers\Filament;
 
+use App\Models\Setting;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
 use Filament\Http\Middleware\DisableBladeIconComponents;
@@ -26,6 +27,9 @@ class CmsPanelProvider extends PanelProvider
             ->default()
             ->id('cms')
             ->path('cms')
+
+            ->brandName(Setting::first()?->company_name ?? 'Laravel')
+
             ->login()
             ->colors([
                 'primary' => Color::Amber,
