@@ -2,8 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Models\Setting;
 use App\Models\User;
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -13,12 +13,22 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
+        User::updateOrCreate(
+            ['email' => 'admin@mail.com'], 
+            [
+                'name' => 'Test User',
+                'password' => bcrypt(123456),
+            ]
+        );
 
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'admin@mail.com',
-            'password' => bcrypt(123456)
-        ]);
+        Setting::updateOrCreate(
+            ['id' => 1],
+            [
+                'company_name' => 'Roketin',
+                'email' => 'info@roketin.com',
+                'phone' => '08123456789',
+                'address' => 'Jl. Contoh Alamat No.1, Jakarta',
+            ]
+        );
     }
 }
