@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\About;
 use App\Models\Setting;
 use App\Models\User;
 use Illuminate\Database\Seeder;
@@ -14,7 +15,7 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         User::updateOrCreate(
-            ['email' => 'admin@mail.com'], 
+            ['email' => 'admin@mail.com'],
             [
                 'name' => 'Test User',
                 'password' => bcrypt(123456),
@@ -30,5 +31,11 @@ class DatabaseSeeder extends Seeder
                 'address' => 'Jl. Contoh Alamat No.1, Jakarta',
             ]
         );
+
+        About::firstOrCreate([
+            'title' => 'Tentang Kami',
+        ], [
+            'content' => '<p>Konten awal tentang kami</p>',
+        ]);
     }
 }
