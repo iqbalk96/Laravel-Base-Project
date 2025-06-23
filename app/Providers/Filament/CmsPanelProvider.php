@@ -27,8 +27,12 @@ class CmsPanelProvider extends PanelProvider
             ->default()
             ->id('cms')
             ->path('cms')
-
+            
+            // brand name get from setting menu
             ->brandName(Setting::first()?->company_name ?? 'Laravel')
+            
+            // favicon integrate from setting menu
+            ->favicon(fn () => Setting::first()?->favicon ? asset('storage/' . Setting::first()->favicon) : null)
 
             ->login()
             ->colors([
