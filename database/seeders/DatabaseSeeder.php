@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\About;
 use App\Models\History;
+use App\Models\PrivacyPolicy;
 use App\Models\Setting;
 use App\Models\User;
 use App\Models\VisionMission;
@@ -50,6 +51,10 @@ class DatabaseSeeder extends Seeder
             'vision' => 'Visi',
         ], [
             'mission' => 'Mission 1',
+        ]);
+
+        PrivacyPolicy::firstOrCreate([
+            'content' => 'Privacy',
         ]);
     }
 }
