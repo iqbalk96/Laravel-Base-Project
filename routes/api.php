@@ -18,7 +18,7 @@ use App\Http\Middleware\CustomCors;
 */
 
 // API GET /about — menampilkan data About sebagai objek
-Route::middleware([CustomCors::class])->group(function () {
+Route::middleware(['throttle:api', CustomCors::class])->group(function () {
     Route::get('/about', [AboutController::class, 'show']);
     Route::get('/history', [HistoryController::class, 'show']);
     Route::get('/vision-mission', [VisionMissionController::class, 'show']);
