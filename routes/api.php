@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\AboutController;
+use App\Http\Controllers\Api\HistoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,3 +16,4 @@ use App\Http\Controllers\Api\AboutController;
 
 // API GET /about — menampilkan data About sebagai objek
 Route::get('/about', [AboutController::class, 'show']);
+Route::get('/history', [HistoryController::class, 'show']);
