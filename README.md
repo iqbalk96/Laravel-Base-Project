@@ -113,6 +113,30 @@ Contoh endpoint dasar:
 
 ---
 
+## Penting!
+
+Proyek ini menggunakan **Rate Limiter** dan **Custom CORS** untuk keamanan API publik.
+
+### 🔒 Rate Limiter
+- Batas: 60 request per menit **per IP** **per endpoint**.
+- Jika melebihi batas, API akan merespons dengan status `429 Too Many Requests`.
+
+### 🌐 Custom CORS
+- Hanya domain tertentu yang diizinkan melakukan request.
+- Di environment `production`, request dari browser langsung akan **ditolak** jika bukan dari origin yang diizinkan.
+- Di environment selain `production`, akses tetap dibuka untuk memudahkan pengembangan dan debugging.
+
+Pastikan untuk mengatur `.env` sebagai berikut jika perlu override:
+
+```env
+APP_ENV=production
+ALLOW_PROD_API_DEBUG=false
+ALLOWED_ORIGINS=http://localhost:5173,https://domainmu.com
+
+---
+
+---
+
 ## 🧪 Menjalankan Test
 
 ```bash
