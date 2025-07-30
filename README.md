@@ -16,7 +16,7 @@ Proyek ini dirancang untuk mempercepat proses pembuatan backend aplikasi, teruta
 
 ## ⚙️ Teknologi yang Digunakan
 
-- PHP ^8.2
+- PHP ^8.4
 - Laravel ^12.0
 - Filament ^3.3
 - Laravel Tinker
