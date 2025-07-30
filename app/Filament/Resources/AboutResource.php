@@ -34,7 +34,7 @@ class AboutResource extends Resource
                 TextInput::make('title')
                     ->required(),
                 FileUpload::make('image')->directory('about')->image(),
-                RichEditor::make('content')->label('Konten'),
+                RichEditor::make('content')->label('Konten')->columnSpan('full'),
             ]);
     }
 
