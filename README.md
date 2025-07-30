@@ -128,9 +128,11 @@ Proyek ini menggunakan **Rate Limiter** dan **Custom CORS** untuk keamanan API p
 
 Pastikan untuk mengatur `.env` sebagai berikut jika perlu override:
 
+```bash
 APP_ENV=production
 ALLOW_PROD_API_DEBUG=false
 ALLOWED_ORIGINS=http://localhost:5173,https://domainmu.com
+```
 
 
 ---
