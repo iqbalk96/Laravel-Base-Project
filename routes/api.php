@@ -5,6 +5,7 @@ use App\Http\Controllers\Api\AboutController;
 use App\Http\Controllers\Api\BlogController;
 use App\Http\Controllers\Api\HistoryController;
 use App\Http\Controllers\Api\VisionMissionController;
+use App\Http\Middleware\CustomCors;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,8 +18,10 @@ use App\Http\Controllers\Api\VisionMissionController;
 */
 
 // API GET /about — menampilkan data About sebagai objek
-Route::get('/about', [AboutController::class, 'show']);
-Route::get('/history', [HistoryController::class, 'show']);
-Route::get('/vision-mission', [VisionMissionController::class, 'show']);
-Route::get('/blog', [BlogController::class, 'index']);
-Route::get('/blog/{slug}', [BlogController::class, 'show']);
+Route::middleware([CustomCors::class])->group(function () {
+    Route::get('/about', [AboutController::class, 'show']);
+    Route::get('/history', [HistoryController::class, 'show']);
+    Route::get('/vision-mission', [VisionMissionController::class, 'show']);
+    Route::get('/blog', [BlogController::class, 'index']);
+    Route::get('/blog/{slug}', [BlogController::class, 'show']);
+});
