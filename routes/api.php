@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\AboutController;
 use App\Http\Controllers\Api\BlogController;
+use App\Http\Controllers\Api\CategoryController;
 use App\Http\Controllers\Api\HistoryController;
 use App\Http\Controllers\Api\VisionMissionController;
 use App\Http\Middleware\CustomCors;
@@ -24,4 +25,6 @@ Route::middleware(['throttle:api', CustomCors::class])->group(function () {
     Route::get('/vision-mission', [VisionMissionController::class, 'show']);
     Route::get('/blog', [BlogController::class, 'index']);
     Route::get('/blog/{slug}', [BlogController::class, 'show']);
+    Route::get('/category', [CategoryController::class, 'index']);
+    Route::get('/category/{slug}', [CategoryController::class, 'show']);
 });
