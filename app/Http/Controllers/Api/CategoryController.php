@@ -33,8 +33,8 @@ class CategoryController extends Controller
                 'slug' => $category->slug,
                 'type' => $category->type,
                 'is_active' => (bool) $category->is_active,
-                'published_at' => $category->published_at,
                 'created_at' => $category->created_at,
+                'updated_at' => $category->updated_at,
             ];
         });
 
@@ -56,8 +56,8 @@ class CategoryController extends Controller
             'slug' => $category->slug,
             'type' => $category->type,
             'is_active' => (bool) $category->is_active,
-            'published_at' => $category->published_at,
             'created_at' => $category->created_at,
+            'updated_at' => $category->updated_at,
         ]);
     }
 }
