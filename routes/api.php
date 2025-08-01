@@ -10,6 +10,7 @@ use App\Http\Controllers\Api\GalleryController;
 use App\Http\Controllers\Api\HeroController;
 use App\Http\Controllers\Api\HistoryController;
 use App\Http\Controllers\Api\PortfolioController;
+use App\Http\Controllers\Api\ServiceController;
 use App\Http\Controllers\Api\VisionMissionController;
 use App\Http\Middleware\CustomCors;
 
@@ -36,4 +37,5 @@ Route::middleware(['throttle:api', CustomCors::class])->group(function () {
     Route::get('/gallery', [GalleryController::class, 'index']);
     Route::get('/hero', [HeroController::class, 'index']);
     Route::get('/portfolio', [PortfolioController::class, 'index']);
+    Route::get('/service', [ServiceController::class, 'index']);
 });
