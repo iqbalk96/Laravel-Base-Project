@@ -120,6 +120,7 @@ Proyek ini menggunakan **Rate Limiter** dan **Custom CORS** untuk keamanan API p
 ### 🔒 Rate Limiter
 - Batas: 60 request per menit **per IP** **per endpoint**.
 - Jika melebihi batas, API akan merespons dengan status `429 Too Many Requests`.
+- atur rate limiter pada file app\Providers\AppServiceProvider.php.
 
 ### 🌐 Custom CORS
 - Hanya domain tertentu yang diizinkan melakukan request.
