@@ -12,6 +12,7 @@ use App\Http\Controllers\Api\HistoryController;
 use App\Http\Controllers\Api\PortfolioController;
 use App\Http\Controllers\Api\ServiceController;
 use App\Http\Controllers\Api\TeamController;
+use App\Http\Controllers\Api\TestimonialController;
 use App\Http\Controllers\Api\VisionMissionController;
 use App\Http\Middleware\CustomCors;
 
@@ -40,4 +41,5 @@ Route::middleware(['throttle:api', CustomCors::class])->group(function () {
     Route::get('/portfolio', [PortfolioController::class, 'index']);
     Route::get('/service', [ServiceController::class, 'index']);
     Route::get('/team', [TeamController::class, 'index']);
+    Route::get('/testimonial', [TestimonialController::class, 'index']);
 });
